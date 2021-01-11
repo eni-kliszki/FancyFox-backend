@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/comment-service/comment-service.iml" filepath="$PROJECT_DIR$/comment-service/comment-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/media-service/media-service.iml" filepath="$PROJECT_DIR$/media-service/media-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/rating-service/rating-service.iml" filepath="$PROJECT_DIR$/rating-service/rating-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/service-registry/service-registry.iml" filepath="$PROJECT_DIR$/service-registry/service-registry.iml" />
