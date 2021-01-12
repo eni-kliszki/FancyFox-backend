@@ -29,8 +29,8 @@ public class RatingService {
     }
 
 
-    public Rating getRatingByVideoId(Long videoId) {
-        return repo.getByVideoId(videoId);
+    public Long getRatingByVideoId(Long videoId) {
+        return repo.getByVideoId(videoId).getRatingNumber();
     }
 
     public Long increaseRatingByVideoId(Long videoId) {
