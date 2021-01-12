@@ -33,7 +33,7 @@ class CommentControllerTest {
 
         commentRepository.save(comment);
 
-        String commentString = commentController.getCommentByMediaId("1").getBody().get(1).getComment();
+        String commentString = commentController.getCommentByMediaId("1").getBody().get(0).getComment();
 
         assertEquals("Much doge", commentString);
     }
