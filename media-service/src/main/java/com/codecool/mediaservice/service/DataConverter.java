@@ -21,12 +21,12 @@ public class DataConverter {
 
     public DetailedMedia createDetailedMediaById(Long id) {
         Media mediaFromDb = mediaRepository.findMediaById(id);
-        String[] commentsFromService = restTemplate.getForEntity("http://localhost:8090/comment/" + id, String[].class).getBody();
+        String[] commentsFromService = restTemplate.getForEntity("http://commentservice/comment/" + id, String[].class).getBody();
         List<String> comments = new ArrayList<>();
         if (commentsFromService != null) {
             comments.addAll(Arrays.asList(commentsFromService));
         }
-        Integer rating = restTemplate.getForEntity("http://localhost:8070/rating/" + id, Integer.class).getBody();
+        Integer rating = restTemplate.getForEntity("http://ratingservice/rating/" + id, Integer.class).getBody();
 
         DetailedMedia detailedMedia = DetailedMedia.builder()
                 .id(mediaFromDb.getId())
