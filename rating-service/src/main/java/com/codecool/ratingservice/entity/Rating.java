@@ -22,8 +22,8 @@ public class Rating {
     @GeneratedValue
     private Long id;
 
+    @Column(unique = true)
     private Long videoId;
 
-    @Column(unique = true)
     private Long ratingNumber;
 }
