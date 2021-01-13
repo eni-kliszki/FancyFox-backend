@@ -3,7 +3,6 @@ package com.codecool.mediaservice.controller;
 import com.codecool.mediaservice.entity.Media;
 import com.codecool.mediaservice.model.CommentModel;
 import com.codecool.mediaservice.model.DetailedMedia;
-import com.codecool.mediaservice.model.RatingModel;
 import com.codecool.mediaservice.repository.MediaRepository;
 import com.codecool.mediaservice.service.DataConverter;
 import org.springframework.beans.factory.annotation.Autowired;
