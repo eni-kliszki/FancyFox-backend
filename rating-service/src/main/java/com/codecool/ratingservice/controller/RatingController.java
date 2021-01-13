@@ -27,8 +27,8 @@ public class RatingController {
         return service.increaseRatingByVideoId(id);
     }
 
-    @PostMapping("/{videoId}")
-    public String addRatingByVideoId(@PathVariable("videoId") Long id) {
+    @PostMapping("/add-rating")
+    public String addRatingByVideoId(@RequestBody Long id) {
         boolean success = service.addNewRating(id);
         String msg = "OK";
         if (!success) {

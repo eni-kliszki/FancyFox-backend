@@ -3,6 +3,7 @@ package com.codecool.mediaservice.controller;
 import com.codecool.mediaservice.entity.Media;
 import com.codecool.mediaservice.model.CommentModel;
 import com.codecool.mediaservice.model.DetailedMedia;
+import com.codecool.mediaservice.model.RatingModel;
 import com.codecool.mediaservice.repository.MediaRepository;
 import com.codecool.mediaservice.service.DataConverter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,8 @@ public class MediaController {
     @PostMapping("/add-post")
     public ResponseEntity<?> uploadMedia(@RequestBody Media media) {
         try {
-            mediaRepository.save(media);
+            Media savedMedia = mediaRepository.save(media);
+            restTemplate.postForEntity("http://ratingservice/rating/add-rating", savedMedia.getId() ,String.class);
             return ResponseEntity.ok("Successfully uploaded");
         } catch (Exception e) {
             return ResponseEntity.ok("Upload failed" + e.getMessage());

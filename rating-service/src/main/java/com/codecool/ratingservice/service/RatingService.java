@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class RatingService {
 
     @Autowired
-    RatingRepository repo;
+    private RatingRepository repo;
 
 
     public boolean addNewRating(Long videoId) {
