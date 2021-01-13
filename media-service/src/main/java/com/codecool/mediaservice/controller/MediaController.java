@@ -3,6 +3,7 @@ package com.codecool.mediaservice.controller;
 import com.codecool.mediaservice.entity.Media;
 import com.codecool.mediaservice.model.CommentModel;
 import com.codecool.mediaservice.model.DetailedMedia;
+import com.codecool.mediaservice.model.RatingModel;
 import com.codecool.mediaservice.repository.MediaRepository;
 import com.codecool.mediaservice.service.DataConverter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,5 +52,11 @@ public class MediaController {
     public ResponseEntity<?> uploadComment(@RequestBody CommentModel comment) {
         ResponseEntity<String> stringResponseEntity = restTemplate.postForEntity("http://commentservice/comment/add", comment, String.class);
         return ResponseEntity.ok(Objects.requireNonNull(stringResponseEntity.getBody()));
+    }
+
+    @PutMapping("/increase-rating")
+    public ResponseEntity<?> increaseRatingByVideoId(@RequestBody RatingModel videoId){
+        restTemplate.put("http://ratingservice/rating/" + videoId.getVideoId(), String.class);
+        return ResponseEntity.ok("Upvote successful");
     }
 }

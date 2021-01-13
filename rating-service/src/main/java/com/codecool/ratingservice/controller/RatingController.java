@@ -5,6 +5,7 @@ import com.codecool.ratingservice.entity.Rating;
 import com.codecool.ratingservice.service.RatingService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,8 +24,13 @@ public class RatingController {
     }
 
     @PutMapping("/{videoId}")
-    public Long updateRating(@PathVariable("videoId") Long id) {
-        return service.increaseRatingByVideoId(id);
+    public ResponseEntity<?> updateRating(@PathVariable("videoId") Long id) {
+        try{
+            service.increaseRatingByVideoId(id);
+            return ResponseEntity.ok("Successfully updated rating");
+        }catch(Exception e){
+            return ResponseEntity.ok("Updating rating failed");
+        }
     }
 
     @PostMapping("/add-rating")

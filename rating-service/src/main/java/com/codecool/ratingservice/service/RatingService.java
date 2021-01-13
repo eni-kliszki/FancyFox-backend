@@ -33,10 +33,9 @@ public class RatingService {
         return repo.getByVideoId(videoId).getRatingNumber();
     }
 
-    public Long increaseRatingByVideoId(Long videoId) {
+    public void increaseRatingByVideoId(Long videoId) {
         Long ratingNumber = repo.getByVideoId(videoId).getRatingNumber() + 1;
         repo.updateRatingNumberByVideoId(videoId, ratingNumber);
-        return ratingNumber;
     }
 
 
