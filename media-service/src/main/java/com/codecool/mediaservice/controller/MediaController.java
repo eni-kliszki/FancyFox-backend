@@ -28,7 +28,7 @@ public class MediaController {
 
     @GetMapping("/all")
     public ResponseEntity<List<Media>> getAllMedia() {
-        return ResponseEntity.ok(mediaRepository.findAll());
+        return ResponseEntity.ok(mediaRepository.findAllByOrderByIdDesc());
     }
 
     @GetMapping("/{id}")
