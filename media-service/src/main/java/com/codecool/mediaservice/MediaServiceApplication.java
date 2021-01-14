@@ -52,11 +52,34 @@ public class MediaServiceApplication {
                     .url("https://www.youtube.com/watch?v=Zm1rxbgnBBQ")
                     .build();
 
+            Media staircaseCat = Media.builder()
+                    .title("Staircase Cat")
+                    .url("https://www.youtube.com/watch?v=_2380DCuLeE")
+                    .build();
+
+            Media highFive = Media.builder()
+                    .title("High five!")
+                    .url("https://www.youtube.com/watch?v=lFtB06GZykw")
+                    .build();
+
+            Media talkingParrot = Media.builder()
+                    .title("Talking parrot")
+                    .url("https://www.youtube.com/watch?v=WQ_wO0r16ww")
+                    .build();
+
+            Media arcticFox = Media.builder()
+                    .title("Baby Arctic Fox Steals Mans Fish")
+                    .url("https://www.youtube.com/watch?v=0OaxZXizA0M")
+                    .build();
+
             mediaRepository.save(laughingFox);
             mediaRepository.save(newToy);
             mediaRepository.save(dontWoof);
             mediaRepository.save(dogVsHairClips);
-
+            mediaRepository.save(staircaseCat);
+            mediaRepository.save(highFive);
+            mediaRepository.save(talkingParrot);
+            mediaRepository.save(arcticFox);
         };
     }
 }

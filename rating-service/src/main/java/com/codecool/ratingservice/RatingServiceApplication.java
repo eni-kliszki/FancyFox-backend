@@ -39,12 +39,28 @@ public class RatingServiceApplication {
 					.videoId((long) 2)
 					.build());
 			ratings.add(Rating.builder()
-					.ratingNumber((long) 68)
+					.ratingNumber((long) 268)
 					.videoId((long) 3)
 					.build());
 			ratings.add(Rating.builder()
 					.ratingNumber((long) 910)
 					.videoId((long) 4)
+					.build());
+			ratings.add(Rating.builder()
+					.ratingNumber((long) 10001)
+					.videoId((long) 5)
+					.build());
+			ratings.add(Rating.builder()
+					.ratingNumber((long) 577)
+					.videoId((long) 6)
+					.build());
+			ratings.add(Rating.builder()
+					.ratingNumber((long) 362)
+					.videoId((long) 7)
+					.build());
+			ratings.add(Rating.builder()
+					.ratingNumber((long) 789)
+					.videoId((long) 8)
 					.build());
 
 			repo.saveAll(ratings);
