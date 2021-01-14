@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 @RestController
@@ -26,7 +27,12 @@ public class CommentController {
     }
 
     @PostMapping("add")
-    public void addComment(@RequestBody Comment comment) {
-        commentRepository.save(comment);
+    public ResponseEntity<?> addComment(@RequestBody Comment comment) {
+        try{
+            commentRepository.save(comment);
+            return ResponseEntity.ok("Comment saved successfully");
+        }catch (Exception e){
+            return ResponseEntity.ok("Saving comment failed:" + e.getMessage());
+        }
     }
 }
