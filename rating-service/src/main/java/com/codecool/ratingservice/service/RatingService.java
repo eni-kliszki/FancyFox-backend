@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class RatingService {
 
     @Autowired
-    RatingRepository repo;
+    private RatingRepository repo;
 
 
     public boolean addNewRating(Long videoId) {
@@ -33,10 +33,9 @@ public class RatingService {
         return repo.getByVideoId(videoId).getRatingNumber();
     }
 
-    public Long increaseRatingByVideoId(Long videoId) {
+    public void increaseRatingByVideoId(Long videoId) {
         Long ratingNumber = repo.getByVideoId(videoId).getRatingNumber() + 1;
         repo.updateRatingNumberByVideoId(videoId, ratingNumber);
-        return ratingNumber;
     }
 
 
