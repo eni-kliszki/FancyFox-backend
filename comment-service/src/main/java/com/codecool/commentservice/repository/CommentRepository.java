@@ -7,5 +7,8 @@ import java.util.List;
 
 public interface CommentRepository extends JpaRepository<Comment, Long> {
 
-    List<Comment> findAllByMediaId(Long id);
+    List<Comment> findAllByMediaIdOrderByIdDesc(Long id);
+
+
+
 }
